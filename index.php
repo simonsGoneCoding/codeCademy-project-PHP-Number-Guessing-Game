@@ -25,7 +25,20 @@ function guessNumber(){
   }elseif($player_guess < $rand_num){
     $guess_low++;
   } 
-
 }
 
+function gameSummary(){   //output for user stating score. 
+  global $play_count, $correct_guesses, $guess_high, $guess_low;
+  //calculating % of correct guesses.
+  $score = $correct_guesses / $play_count * 100; 
+  echo "$play_count rounds played, $score% of correct guesses.";
+  //scecifying tendency in guessing: 
+  echo $guess_high > $guess_low ? "When you guessed wrong, you tended to guess high." : "When you guessed wrong, you tended to guess low."; 
+}
+
+
 guessNumber(); 
+guessNumber(); 
+guessNumber(); 
+guessNumber(); 
+gameSummary(); 
